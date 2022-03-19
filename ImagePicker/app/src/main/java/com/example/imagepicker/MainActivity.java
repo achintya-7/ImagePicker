@@ -253,17 +253,8 @@ public class MainActivity extends AppCompatActivity {
                             count++;
                             imgCount.setText(String.valueOf(count));
                             gridView.invalidateViews();
-//                            gridView.setAdapter(new CustomAdapter(view.getContext(), getData()));
                         }
                     }
-                }
-            });
-
-            view.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View view) {
-
-                    return false;
                 }
             });
 
