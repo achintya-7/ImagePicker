@@ -3,8 +3,12 @@ package com.example.imagepicker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 public class onClicked_fullscreen extends AppCompatActivity {
 
@@ -19,8 +23,9 @@ public class onClicked_fullscreen extends AppCompatActivity {
         Intent intent = getIntent();
 
         if(intent.getExtras() != null){
-            int selectedImage = intent.getIntExtra("image", 0);
-            imageView.setImageResource(selectedImage);
+            String selectedImageString = intent.getStringExtra("image");
+            Toast.makeText(this, selectedImageString, Toast.LENGTH_SHORT).show();
+            Picasso.get().load(Uri.parse(selectedImageString)).placeholder(R.drawable.ic_launcher_background).into(imageView);
         }
 
 
